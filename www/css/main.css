@@ -1,0 +1,120 @@
+body {
+	background-color: #CBCAB6;
+	font-family: "Tahoma";
+	width:100%;
+}
+
+#loader {
+	background: url('../img/ajax-loader.gif') no-repeat top left;
+	width: 43px;
+	height: 11px;
+	margin: 100 0 0 250;
+}
+
+#content-container {
+	margin: 20px;
+	float: left;
+}
+
+#matchups {
+	list-style-type: none;
+	display: inline-block;
+	padding: 0;
+}
+
+#matchups li {
+	margin-bottom: 10;
+}
+
+#franchise {
+	width: 250px;
+	vertical-align: top;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+
+#franchise table {
+	font-size: small;
+	padding:4px;
+	width: 100%;
+	text-align: left;
+}
+
+#name {
+	padding: 3 0 7 4;
+	background-color: grey;
+	border-radius: 2px;
+}
+
+#name.winning {
+	background-color: green;
+}
+
+
+#players td {
+	border-bottom: 1px solid black;
+	padding: 7 15 0 0;
+	line-height: 1;
+}
+
+/*Player states*/
+
+.score {
+	background-color: green;
+}
+.default {
+}
+
+#player.score-neg {
+	background-color: red;	
+}
+
+#player.not-started {
+	color: black;
+}
+
+#player.playing {
+	color: green;
+}
+
+#player.injured {
+	color: red;
+}
+
+#player.finished {
+	color: gray;	
+}
+
+#points {
+	text-align: right;
+}
+
+/*Begin Output Console*/
+
+#console {
+	visibility: hidden;
+	background-color: #424242;
+	border: 2px inset #FFF;
+	width: 520px;
+	height: 100px;
+	float: left;
+	overflow: auto;
+	white-space: nowrap;
+	display: inline-block;
+	font-size: small;
+}
+
+#console ul {
+	list-style-type: none;
+	display: inline-block;
+	margin: 3;
+	padding: 0;
+}
+
+#console li {
+	font-family: Calibri,Arial;
+	color:#FFF;
+}
+
+
+/*End Output Console*/

@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>JOFFL Live Scoring</title>
+
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript" src="js/lib/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="js/lib/jquery-ui-1.10.3.custom.min.js"></script>
+	<script type="text/javascript" src="js/lib/knockout-2.3.0.js"></script>
+	<script type="text/javascript" src="js/lib/socket.io.js"></script>
+	<script type="text/javascript" src="js/app/MyFantasyLeagueViewModel.js"></script>
+	<script type="text/javascript" src="js/app/main.js"></script>
+	
+</head>
+
+<body>
+	<div id="content-container">
+	    
+		<ul id="matchups" data-bind="foreach: matchups">
+    		<li>
+    			<table id="matchup">
+		    		<tr data-bind="foreach: franchises">
+		                <td id="franchise">
+		                	<div id="name" data-bind="css: { winning: $parent.winningId == id}">
+		                		<strong data-bind="text: name"></strong>
+		                	</div>
+						    <table>
+						    	<thead>
+							        <tr>
+							            <th>Player</th>
+							            <th>Points</th>
+							        </tr>
+						    	</thead>
+						        <tbody id="players" data-bind="foreach: players">
+						            <tr data-bind="highlightScore: points" data-bind="css: {'not-started': status() == 0, playing: status() == 1, finished: status() == 2 }">
+						                <td width="80%"><span data-bind="text: displayName"></td>
+						               	<td width="20%"><span data-bind="text: points"></td>
+						            </tr>
+						        </tbody>
+						        <tfoot id="totals">
+							        <tr>
+							        	<td><strong>Total:</strong></td>
+							        	<td><strong data-bind="text: total"></strong></td>
+							        </tr>
+							        <tr>
+							        	<td><strong>Remaining:</strong></td>
+							        	<td><strong data-bind="text: remaining"></strong></td>
+							        </tr>
+						    	</tfoot>
+						    </table>
+		                </td>
+		    		</tr>
+	    		</table>
+    		</li>
+	    </ul>
+
+		<div id="loader"></div>
+
+		<div id="console">
+			<ul id="write">
+				<li>test</li>
+			</ul>
+		</div>
+	</div>
+
+</body>
+</html>
